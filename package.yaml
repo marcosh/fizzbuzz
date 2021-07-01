@@ -13,8 +13,21 @@ extra-source-files:
 
 dependencies:
   - base >= 4.7 && < 5
+  - containers
 
-executables:
-  fizzbuzz:
-    source-dirs:      src
-    main:             Main.hs
+library:
+  source-dirs:        src
+
+#executables:
+#  fizzbuzz-exe:
+#    source-dirs:      src
+#    main:             Main.hs
+
+tests:
+  fizzbuzz-test:
+    main:             Spec.hs
+    source-dirs:      test
+    dependencies:
+      - fizzbuzz
+      - hspec
+      - QuickCheck
